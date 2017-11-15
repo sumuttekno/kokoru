@@ -14,17 +14,10 @@ karma as test runer
 
 Note: React file is compiled in one file using webpack
 
-# Preparation
-
-```bash
-npm install
-webpack
-```
-
 # Run Instruction
 
 ```bash
-yarn start
+yarn provision
 ```
 
 # Run Test
@@ -33,3 +26,5 @@ yarn start
 yarn test:setup
 yarn test
 ```
+
+visit localhost:3000
