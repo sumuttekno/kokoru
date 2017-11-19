@@ -1,0 +1,17 @@
+language: node_js
+sudo: required
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+node_js:
+  - "7"
+before_install:
+  - npm setup
+install:
+  - webpack
+script:
+  - npm test
+  - npm start
