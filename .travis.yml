@@ -9,6 +9,7 @@ addons:
 node_js:
   - "7"
 before_install:
+  - sudo apt-get install yarn
   - yarn setup
 install:
   - webpack
