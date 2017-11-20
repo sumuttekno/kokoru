@@ -14,9 +14,8 @@ node_js:
   - "7" 
 before_install: 
   - npm install -g yarn 
-  - yarn setup 
 install: 
-  - webpack 
+  - yarn setup 
 script: 
   - yarn test 
   - yarn start 
