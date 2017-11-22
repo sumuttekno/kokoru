@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "provision": "docker build -t kokoru/web-app .; docker run -p 3000:3000 -d kokoru/web-app",
-    "start": "nodemon index.js webpack --watch",
+    "start": "nodemon index.js webpack",
+    "start:watch": "nodemon index.js webpack --watch",
     "test": "karma start",
     "test:ci": "yarn test -- -- --single-run",
     "setup": "npm install;/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16 export DISPLAY=:99.0 export JASMINE_BROWSER=chrome"
