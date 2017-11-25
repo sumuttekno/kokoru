@@ -1,5 +1,9 @@
 # Kokoru
 
+[![Build Status](https://travis-ci.org/sumuttekno/kokoru.svg?branch=master)](https://travis-ci.org/sumuttekno/kokoru)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sumuttekno/kokoru/blob/master/LICENSE)
+
+
 Kokoru is a web apps to be used as part of dota 2 information provider.
 
 # Technology Stack
