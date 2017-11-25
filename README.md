@@ -16,15 +16,25 @@ Note: React file is compiled in one file using webpack
 
 # Run Instruction
 
+Using docker 
+
 ```bash
 yarn provision
+visit localhost:3000
+```
+
+Not using docker
+
+```bash
+yarn setup
+yarn build
+yarn start:watch
+visit localhost:3000
 ```
 
 # Run Test
 
 ```bash
-yarn test:setup
+yarn setup:test
 yarn test
 ```
-
-visit localhost:3000
