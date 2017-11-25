@@ -20,7 +20,6 @@ before_install:
 install: 
   - yarn setup 
 script: 
-  - yarn build
   - yarn start
   - yarn setup:test
   - yarn test 
