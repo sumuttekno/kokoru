@@ -27,13 +27,14 @@ Not using docker
 
 ```bash
 yarn setup
-webpack 
-yarn start
+yarn build
+yarn start:watch
 visit localhost:3000
 ```
 
 # Run Test
 
 ```bash
+yarn setup:test
 yarn test
 ```
