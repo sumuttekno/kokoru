@@ -41,7 +41,7 @@ class Register extends React.Component {
 			            </i>
 			            <h2 className={ styles.welcomeTitle }>Welcome</h2>
 			            <p className={ styles.welcomeText }>
-			              Now you can quickly search basketball mates from your computer.
+			              Now you can quickly search dota mates from your computer.
 			            </p>
 			          </div>
 			        </div>
