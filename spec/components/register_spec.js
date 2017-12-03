@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 
 import Register from "components/register";
-import UserProtocol from "protocols/user_protocol";
+import RequestAdapter from "adapters/request_adapter";
 import UserModel from "models/user_model";
 
 describe("<Register />", () => {
@@ -14,30 +14,30 @@ describe("<Register />", () => {
 });
 
 describe("#registerClick", () => {
-  it("should call Register#register when clicked on register button", () => {
-	let component, e, rendered, spy;
+	it("should call Register#register when clicked on register button", () => {
+		let component, e, rendered, spy;
 
-	e = { preventDefault: jasmine.createSpy("preventDefault") }; 
+		e = { preventDefault: jasmine.createSpy("preventDefault") }; 
 
-	spy = spyOn(Register.prototype, "register");
-	rendered = mount(<Register />);	
-	rendered.find('button').simulate('click', 'using prototype');
+		spy = spyOn(Register.prototype, "register");
+		rendered = mount(<Register />);	
+		rendered.find('button').simulate('click', 'using prototype');
 
-	expect(spy).toHaveBeenCalled();
-  });
+		expect(spy).toHaveBeenCalled();
+	});
 });
 
 describe("#register", () => {
-	it("should call UserProtocol#register", () => {
+	it("should call RequestAdapter#send", () => {
 		let stubUserModel, component;
 
 		stubUserModel = new UserModel({ username: "stub-username", password: "stub-password" });
 
-		spyOn(UserProtocol, "register");
+		spyOn(RequestAdapter, "send");
 
 		component = new Register();
 		component.register("stub-username", "stub-password");
 
-		expect(UserProtocol.register).toHaveBeenCalledWith(stubUserModel);
+		expect(RequestAdapter.send).toHaveBeenCalled;
 	});
 });

@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
 
 var userSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String
+  },
+  password: {
+  	type: String
   }
 });
 

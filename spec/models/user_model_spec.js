@@ -1,12 +1,6 @@
 import UserModel from "models/user_model"; 
 
 describe("UserModel", () => {
-	describe("#constructor", () => {
-		it("doesn't throw error if argument empty", () => {
-			expect(UserModel.constructor).not.toThrowError();	
-		});
-	});
-
 	describe("#username", () => {
 		it("return username", () => {
 			let model;
@@ -24,6 +18,28 @@ describe("UserModel", () => {
 			model = new UserModel({ password: "stub-password" });
 
 			expect(model.password).toEqual("stub-password");
+		});
+	});
+
+	describe(".mutationBuild", () => {
+		it("return json of mutation query", () => {
+			let model, expectedResult, stubUsername, stubPassword;
+
+			stubUsername = "stub-username";
+			stubPassword = "stub-password";
+			model = new UserModel({ username: "stub-username", password: "stub-password" }).mutationBuild();
+			expectedResult = JSON.stringify({
+				query: "mutation {"+
+					"addUser("+
+						"data: { "+
+							"username:" + '"' + stubUsername + '"' + "," +
+							"password:" + '"' + stubPassword + '"' + 
+						"}" +	
+					")"+
+				"}"
+			});
+
+			expect(model).toEqual(expectedResult);
 		});
 	});
 });

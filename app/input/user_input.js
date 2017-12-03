@@ -8,6 +8,7 @@ export default new GraphQLInputObjectType({
   name: 'UserInput',
   fields: {
     _id: {type: GraphQLID},
-    name: {type: GraphQLString}
+    username: {type: GraphQLString},
+    password: {type: GraphQLString}
   }
 });

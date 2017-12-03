@@ -15,7 +15,8 @@ webpackResolve = (
       stores: path.resolve(__dirname, "public/stores/"),
       supports: path.resolve(__dirname, "public/supports/"),
       stylesheets: path.resolve(__dirname, "public/stylesheets/"),
-      models: path.resolve(__dirname, "public/models/")
+      models: path.resolve(__dirname, "public/models/"),
+      app: path.resolve(__dirname, "app/")
     }
   }
 );
