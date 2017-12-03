@@ -10,6 +10,7 @@ import { withStyles } from 'material-ui/styles';
 
 import UserProtocol from "protocols/user_protocol";
 import UserModel from "models/user_model";
+import RequestAdapter from "adapters/request_adapter";
 
 class Register extends React.Component {
 	constructor(props) {
@@ -27,7 +28,12 @@ class Register extends React.Component {
 	}
 
 	register(username, password) {
-		UserProtocol.register(new UserModel({ username: username, password: password }));
+		let payload = new UserModel({ username: username.value , password: password.value }).mutationBuild();
+		let callback = (result) => {
+			console.log(result);
+		};
+
+		RequestAdapter.send(payload, callback);
 	}
 
 	render() {

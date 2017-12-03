@@ -1,15 +1,28 @@
 class UserModel {
-	constructor(element = {}) {
-		this._username = element.username;
-		this._password = element.password;
+	constructor(data) {
+		this.username = data.username;
+		this.password = data.password;
 	}
 
-	get username() {
-		return this._username || ""; 
+	username() {
+		return this.username || ""; 
 	}
 
-	get password() {
-		return this._password || "";
+	password() {
+		return this.password || "";
+	}
+
+	mutationBuild() {
+		return JSON.stringify({
+			query: "mutation {"+
+				"addUser("+
+					"data: { "+
+						"username:"+ '"' + this.username + '"' + "," +
+						"password:"+ '"' + this.password + '"' + 
+					"}" +	
+				")"+
+			"}"
+		});
 	}
 }
 

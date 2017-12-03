@@ -8,7 +8,10 @@ import {
 export default new GraphQLObjectType({
   name: 'User',
   fields: {
-    name: {
+    username: {
+      type: GraphQLString
+    },
+    password: {
       type: GraphQLString
     },
     _id: {
